@@ -1,0 +1,42 @@
+﻿@model MVCwithDB.Models.RoleModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles.RoleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles.RoleAd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.rlist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RolId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleAd)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {   id=item.RolId }) |
+                @Html.ActionLink("Details", "Details", new {   id=item.RolId }) |
+                @Html.ActionLink("Delete", "Delete", new {   id=item.RolId   })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
