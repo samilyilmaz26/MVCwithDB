@@ -1,0 +1,40 @@
+﻿@model MVCwithDB.Models.RoleModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete </h1>
+
+<h4>Roles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <h1>Are you sure to delete </h1>
+        <form asp-action="Delete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div hidden class="form-group">
+                <label asp-for="Roles.RoleId" class="control-label"></label>
+                <input asp-for="Roles.RoleId" class="form-control" />
+                <span asp-validation-for="Roles.RoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Roles.RoleAd" class="control-label"></label>
+                <input asp-for="Roles.RoleAd" class="form-control" />
+                <span asp-validation-for="Roles.RoleAd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -61,12 +61,26 @@ namespace MVCwithDB.Controllers
         [HttpPost]
         public IActionResult Create(RoleModel model)
         {
-          //  _db.Set<Roles>().Add(model.Roles);
+               //  _db.Set<Roles>().Add(model.Roles);
             _db.Entry(model.Roles).State = EntityState.Added;
-         
+             // yyyy
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            _model.Roles = _db.Set<Roles>().Find(id);
+            return View(_model);
+        }
+        [HttpPost]
+        public IActionResult Delete(RoleModel model)
+        {
+            //  _db.Set<Roles>().Remove(model.Roles);
+            _db.Entry(model.Roles).State = EntityState.Deleted;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 } 
