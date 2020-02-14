@@ -82,5 +82,26 @@ namespace MVCwithDB.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        // TEK SAYFADA YÖNETİM
+
+        //[HttpGet]
+        //public IActionResult Edit(int id)
+        //{
+        //    ViewBag.Baslik = "Edit";
+        //    ViewBag.BtnText = "Save";
+        //    ViewBag.btnClass = "btn btn-primary";
+        //    _model.Roles = _db.Set<Roles>().Find(id);
+        //    return View(_model);
+        //}
+        //[HttpGet]
+        //public IActionResult Delete(int id)
+        //{
+        //    ViewBag.Baslik = "Delete";
+        //    ViewBag.BtnText = "Delete";
+        //    ViewBag.btnClass = "btn btn-danger";
+        //    _model.Roles = _db.Set<Roles>().Find(id);
+        //    return View("Edit", _model);
+        //}
     }
 } 
